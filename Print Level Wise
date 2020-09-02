@@ -1,0 +1,25 @@
+void printLevelWise(TreeNode<int>* root) {
+    /* Don't write main().
+     * Don't read input, it is passed as function argument.
+     * Print output as specified in the question.
+     */
+    queue<TreeNode<int>*>pending;
+    pending.push(root);
+        while(pending.size()!=0)
+        {TreeNode<int>*front=pending.front();
+          cout<<front->data<<":";
+         pending.pop();
+        // cout<<front->data<<":";
+         for(int i=0; i<front->children.size();i++)
+         {   
+          
+          
+             cout<<front->children[i]->data;// comma removed
+               if(i != front->children.size() - 1){
+                cout << ","; // new line added 
+            }
+             pending.push(front->children[i]);
+         }
+           cout<<endl; 
+        }
+}
